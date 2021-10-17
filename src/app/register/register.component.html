@@ -1,0 +1,32 @@
+<br>
+<br>
+
+<div  align="center">
+
+                    <div class="card" style="width: 38rem; height: 100%;" align="left">
+                                        <div class="card-body">
+                                          <h1 class="card-title" align="center">SignUp</h1>
+                                          <form>
+                                            <mat-progress-bar mode="buffer" *ngIf="progressBar"></mat-progress-bar>
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Username</label>
+                                              <input type="text" class="form-control" name="username" [(ngModel)]="user.username" placeholder="Enter Your Name">
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputPassword1" class="form-label">Password</label>
+                                              <input type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Enter Your Password">
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label" >Email</label>
+                                              <input type="text" class="form-control" name="email" [(ngModel)]="user.email" placeholder="Enter Your Email">
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="exampleInputEmail1" class="form-label">Address</label>
+                                              <input type="text" class="form-control" name="address" [(ngModel)]="user.address" placeholder="Enter Your Address">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary" (click)="addUser()">SignUp</button>
+                                          </form>
+                                        </div>
+                                      </div>
+                                      
+</div>

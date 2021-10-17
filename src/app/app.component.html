@@ -1,0 +1,80 @@
+<style>
+  
+
+  .spacer {
+    flex: 1;
+  }
+
+  a {
+    margin-right: 20px;
+    color: aliceblue;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    
+    color: black;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .fa-shopping-cart {
+    font-size: 50px;
+    margin: 10px;
+  }
+</style>
+
+<div class="toolbar" role="banner">
+  
+  <span [routerLink]="['/dashboard']"><img src="assets\5baabd5210290.image-removebg-preview (1).png" alt="" width="200px" height="100%"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Menu <i class="fas fa-caret-down"></i></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let cat of categories"
+      [routerLink]="['/dsiplay-category/', cat.id]">{{cat.name}}</button>
+  </mat-menu>
+  <div class="spacer">
+  <a type="button" [routerLink]="['/dashboard']" style="color: black; text-decoration: none;">
+    <i class="fas fa-home"></i>  Home
+  </a>
+  <a type="button" *ngIf="user" [routerLink]="['/profile/', user.id]"  style="color: black; text-decoration: none;">
+  <i class="fas fa-user"></i>  Profile 
+  </a>
+  <a type="button" [routerLink]="['/showproduct']" style="color: black; text-decoration: none;">
+    Products
+   </a>
+  <a type="button" (click)="login()" *ngIf="!user"  style="color: black; text-decoration: none;">
+    SignIn
+  </a>
+  <a type="button" [routerLink]="['/signup']" style="color: black; text-decoration: none;">
+   SignUp
+  </a>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br> <br>
+<div align="center">
+  <img src="\assets\PngItem_1575236.png" alt="" width="900px" height="100%">
+</div>
+<br>
+
+<router-outlet></router-outlet>
